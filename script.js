@@ -49,7 +49,7 @@ function startGame() {
 function peep(){ 
   const hole=randomHole(); 
   hole.classList.add("mole") 
-  const time=Math.random() * 600 + 400; 
+  const time=Math.random() * 500 + 300; 
   setTimeout( ()=>{ 
     hole.classList.remove("mole"); 
     if(!timesUp) peep(); 
