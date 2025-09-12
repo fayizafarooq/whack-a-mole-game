@@ -1,0 +1,66 @@
+body{
+  background-color: hsla(32, 86%, 22%, 0.701); 
+}
+
+.game{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  font-size: 2.5em;
+}
+p{
+  font-size: 2em;
+  margin: 5px;
+}
+
+.grid{
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(5,30%);
+  gap: 10px; 
+  justify-content: center; 
+}
+.hole {
+  height: 80px;
+  width: 80px;
+  border-radius: 50px;
+  background: hsl(120, 95%, 17%);
+  box-shadow: 1px 1px 10px hsla(0, 0%, 0%);
+  max-width: 500px;
+  cursor: pointer;
+}
+.hole.mole{
+  background: url("./mole-rat.jpg") no-repeat center/cover;
+}
+button{
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  background-color:hsla(32, 85%, 12%) ;
+  color: white;
+  box-shadow: 5px 5px 10px hsla(0, 0%, 0%);
+  cursor: pointer;
+}
+button:hover{
+  background-color:hsla(32, 85%, 15%) ;
+}
+@media (max-width:650px){
+  .grid{
+  grid-template-columns: repeat(4,30%); 
+  }
+  .hole{
+    height: 60px;
+    width: 60px;
+  }
+  h1{
+    margin-top: 0;
+  }
+  p{
+  font-size: 1.5em;
+  }
+
+}
