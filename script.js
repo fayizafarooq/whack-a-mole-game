@@ -5,6 +5,8 @@ let lastHole;
 let timesUp=false; 
 let score=0; 
 let countDown;
+let gameRunning = false;
+
 
 function randomHole(){ 
   const random=Math.floor(Math.random()* holes.length); 
@@ -14,8 +16,10 @@ function randomHole(){
   lastHole=hole; 
   return hole; 
 }
-
 function startGame() { 
+  if (gameRunning) return; 
+  gameRunning = true;
+
   score = 0; 
   scoreBoard.textContent = `Score: ${score} | High Score: ${highScore}`; 
   timesUp = false;
@@ -30,6 +34,8 @@ function startGame() {
     if (timeLeft <= 0) { 
       clearInterval(countDown);
       timesUp = true;
+      gameRunning = false;
+      
       if (score > highScore) {
         highScore = score;
         localStorage.setItem("highScore", highScore);}
